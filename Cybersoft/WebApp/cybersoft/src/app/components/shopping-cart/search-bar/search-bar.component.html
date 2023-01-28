@@ -1,0 +1,8 @@
+<!-- Search form -->
+<form class="hide-cursor">
+  <!-- mdbWavesEffect -->
+  <div class="neu-searchbar neu-searchbar-bs ">
+    <i class="fa-solid fa-magnifying-glass icon-spacing"></i>
+    <input class="neu-searchbar-input" type="text" [(ngModel)]="this.searchText" (ngModelChange)="filterProducts($event)" [ngModelOptions]="{standalone: true}" (click)="clearSearchBar()">
+  </div>
+</form>

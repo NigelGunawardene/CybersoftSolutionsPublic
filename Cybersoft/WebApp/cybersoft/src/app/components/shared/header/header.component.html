@@ -1,0 +1,8 @@
+
+<a [@fadeOut] *ngIf="scrolled == 0" [routerLink]="['/shop']" class="welcome-text hide-cursor"> <img class="cybersoft-icon" src="assets/cybersoft.png" />
+    <span *ngIf="(this.loggedInUserModel$ |async )?.firstName == null">Cybersoft Solutions</span>
+    <span *ngIf="(this.loggedInUserModel$ |async )?.firstName != null">Hi {{(loggedInUserModel$ | async)?.firstName}}! </span>
+    </a>
+<!-- <strong>Cybersoft Solutions</strong> -->
+
+

@@ -1,0 +1,23 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.ngx-pagination {
+  display: flex;
+  justify-content: center;
+
+  a{
+    text-decoration: none !important;
+    font-family: sora;
+    font-size: 0.9rem;
+  }
+}
+
+.neu-border{
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-2
+}
+
+.border-transparent{
+  border: transparent;
+}

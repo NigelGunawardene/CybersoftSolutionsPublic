@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center py-3">
+  <div
+    *ngIf="productsList.length == 0"
+    class="spinner-border text-primary"
+    role="productsLoading"
+  >
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="isMobileDevice" class="py-5 mobile-spacing">
+  <!--  bg-light-->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 margin-bottom">
+      <div class="col" *ngFor="let product of productsList">
+        <app-product-item [productItem]="product"></app-product-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isMobileDevice" class="py-5 mobile-spacing">
+  <!--  bg-light-->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 margin-bottom">
+      <cdk-virtual-scroll-viewport
+        itemSize="25"
+        style="height: 80vh; width: 80vw"
+      >
+        <div class="col" *cdkVirtualFor="let product of productsList">
+          <app-product-item [productItem]="product"></app-product-item>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
+</div>

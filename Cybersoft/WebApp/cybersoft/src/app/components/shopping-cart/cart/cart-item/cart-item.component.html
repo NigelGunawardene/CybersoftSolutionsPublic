@@ -1,0 +1,26 @@
+<!--[@flyInOut]-->
+<div  class="card cart-item hide-cursor p-2 remove-border neu-cart-item-background">
+  <span><strong>{{ cartItem.productName }}</strong></span>
+  <span class="change-price-font">Quantity: {{ cartItem.quantity }} x {{ cartItem.price | currency:'LKR ' }}: </span>
+  <p class="text-end change-price-font"><strong>{{ (cartItem.quantity * cartItem.price) | currency:'LKR ' }}</strong></p>
+    <div class="">
+      <!-- neu-flex-column -->
+
+<!--      <div id="app-cover">-->
+<!--        <input type="checkbox" id="checkbox" (click)="removeCartItem(cartItem.id)" [disabled]="this.loading">-->
+<!--        <div id="bin-icon">-->
+<!--          <div id="lid"></div>-->
+<!--          <div id="box">-->
+<!--            <div id="box-inner">-->
+<!--              <div id="bin-lines"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div id="layer"></div>-->
+<!--      </div>-->
+      <button type="button" class="cart-remove-button neu-flex-column" [disabled]="this.loading" (click)="removeCartItem(cartItem.id)">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm spinner-styling"></span>
+        <i *ngIf="!loading" class="fa-solid fa-trash"></i></button>
+    </div>
+
+</div>

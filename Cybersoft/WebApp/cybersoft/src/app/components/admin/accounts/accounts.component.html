@@ -1,0 +1,35 @@
+<div>
+  <div class="container hide-cursor">
+    <h2 class="text-secondary text-center">Accounts</h2>
+
+
+    <div class="neu-border">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th style="width: 25%;">Username</th>
+          <th style="width: 30%;">Fullname</th>
+          <th style="width: 30%;">Email</th>
+          <th style="width: 15%;">Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let e of paginatedAccounts | paginate: { itemsPerPage: this.pageSize, currentPage: this.currentPage, totalItems: totalItems }">
+          <td>{{e.userName}}</td>
+          <td>{{e.fullName}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.phoneNumber}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+
+  <div class="pagination-button-formatting">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+  </div>

@@ -1,0 +1,24 @@
+<div [@fadeInAnimation] class="card order-br-bs">
+  <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+  <div class="card-body">
+
+    <p class="card-text">Order reference number: <strong>{{ individualOrder.publicOrderNumber }}</strong></p>
+<!--    <p class="card-text" *ngIf="this.individualOrder.message!==null">Message: {{ individualOrder.message }}</p>-->
+    <small class="text-muted card-text change-price-font">Order date: {{ individualOrder.orderDate }}</small><br>
+    <small class="text-muted card-text change-price-font">Total price: {{ individualOrder.totalPrice | currency:'LKR ' }}</small>
+    <p class="card-text text-end change-pending-status-color" *ngIf="individualOrder.isComplete===false">Order in progress</p>
+    <p class="card-text text-end change-completed-status-color" *ngIf="individualOrder.isComplete===true">Order is complete</p>
+    <p class="card-text" >Order items:</p>
+    <div class="order-items-bs p-3">
+    <div class="col" *ngFor="let orderDetail of orderDetailList">
+      <app-order-items [orderDetail]="orderDetail"></app-order-items>
+    </div>
+    </div>
+<!--    <div class="d-flex justify-content-between align-items-center">-->
+<!--      <div class="btn-group">-->
+<!--        <button type="button" class="btn btn-sm btn-primary me-2"(click)="handleAddToCart()">Add To Cart</button>-->
+<!--        <button type="button" class="btn btn-sm btn-outline-secondary">View Details</button>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>

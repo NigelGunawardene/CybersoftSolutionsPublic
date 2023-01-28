@@ -1,0 +1,99 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+.register-button-spacing {
+  margin-top: 1rem;
+}
+
+.register-text-spacing {
+  margin-top: 1rem;
+}
+
+.form-field-spacing {
+  padding-bottom: 0.6rem;
+}
+
+.remove-background {
+  background-color: white;
+}
+
+.register-form-labels {
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+.neu-register-container {
+  margin-top: 3.5rem;
+  width: auto;
+  height: auto;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  box-shadow: neu-vars.$login-bs;
+  background: neu-vars.$secondary-color;
+  border-radius: neu-vars.$medium-br;
+  overflow: hidden;
+  color: neu-vars.$neutral-text;
+  margin-bottom: 5rem;
+}
+
+.neu-form-control {
+  width: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: neu-vars.$neutral-text;
+  font-size: 1.1rem;
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$login-bs-inset;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.neu-form-control-input {
+  border: none;
+  background: none;
+  outline: none;
+  caret-color: black;
+}
+
+.neu-form-control-button {
+  border: 4px solid transparent;
+  background: none;
+  outline: none;
+  margin-top: 1rem;
+  width: 60%;
+  height: 3rem;
+  border-radius: neu-vars.$large-br;
+  font-size: 1.1rem;
+  color: neu-vars.$neutral-text;
+  background-color: neu-vars.$secondary-color;
+  box-shadow: neu-vars.$login-bs;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: neu-vars.$main-color;
+    border: 4px solid rgb(255, 255, 255);
+  }
+
+  &:active {
+    border: 4px solid neu-vars.$white;
+    background-color: neu-vars.$main-color;
+  }
+}
+
+.icon-spacing {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.error-icon-spacing {
+  color: neu-vars.$red;
+  padding-left: 1.5rem;
+}
+
+.show-caret {
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+.invalid-login-details {
+  color: neu-vars.$red;
+}
+
+.padding-left{
+  padding-left: 2.6rem;
+}

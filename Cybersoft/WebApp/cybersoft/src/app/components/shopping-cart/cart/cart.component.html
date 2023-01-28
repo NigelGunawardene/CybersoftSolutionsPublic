@@ -1,0 +1,13 @@
+<div *ngIf="(cartItemsSubscription$ | async)?.length === 0" class="text-center empty-cart-styling neu-cart-bs-inset neu-cart-br margin-bottom">Your cart is empty</div>
+
+<ul *ngIf="(cartItemsSubscription$ | async)?.length > 0" class="list-group neu-cart-bs neu-cart-br margin-bottom">
+  <li class="list-group-item neu-cart-item-background" *ngFor="let item of (cartItemsSubscription$ | async)">
+    <app-cart-item [cartItem]="item"></app-cart-item>
+  </li>
+
+<li class="list-group-item change-total-price-font total-price">
+    <strong>Total: {{ cartTotal | currency:'LKR ' }}</strong>
+    </li>
+  </ul>
+  
+  <button *ngIf="(cartItemsSubscription$ | async)?.length != 0" type="button" class="checkout-button-styling neu-checkout-button-border neu-checkout-button-br" [routerLink]="['/checkout']">Checkout</button>

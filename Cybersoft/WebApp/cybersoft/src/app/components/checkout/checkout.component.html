@@ -1,0 +1,41 @@
+<div class="container margin-top">
+  <div class="row neu-flex-column">
+
+    <div class="col-sm-6 mt-5">
+      <div *ngIf="(cartItemsObservable$ | async)!.length === 0" class="hide-cursor neu-flex-column empty-cart-styling neu-checkout-bs-inset neu-checkout-br">Your cart is empty</div>
+        <ul *ngIf="(cartItemsObservable$ | async)!.length > 0" class="list-group hide-cursor remove-border neu-checkout-bs neu-checkout-br">
+          <li class="list-group-item" *ngFor="let item of (cartItemsObservable$ | async)">
+            <app-cart-item [cartItem]="item"></app-cart-item>
+          </li>
+
+          <li class="list-group-item total-price">
+            <strong class="change-price-font">Total: {{ cartTotal | currency:'LKR ' }}</strong>
+          </li>
+        </ul>
+    </div>
+
+    <button *ngIf="(cartItemsObservable$ | async)!.length > 0" type="button" class="place-order-button" [disabled]="this.loading" (click)="placeOrder()">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Place Order</button>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modal-dialog modal-dialog-centered" id="orderPlacedModal" tabindex="-1" aria-labelledby="orderPlacedModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderPlacedModalLabel">Order placed successfully!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Thank you for your order! Please check your registered email for further instructions.</p>
+      </div>
+      <div class="modal-footer">
+<!--        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+        <button type="button" class="btn btn-outline-primary" (click)="closeModal()">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+

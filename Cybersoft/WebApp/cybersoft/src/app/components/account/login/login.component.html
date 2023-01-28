@@ -1,0 +1,84 @@
+<div class="neu-flex-column mobile-spacing">
+  <div [@logInFadeIn] class="neu-flex-column neu-login-container">
+    <h3 [@logInFadeIn] class="show-caret">Login</h3>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      autocomplete="off"
+      class="neu-flex-column"
+    >
+      <div class="neu-form-control hide-cursor">
+        <i class="fa-solid fa-user icon-spacing"></i>
+        <input
+          type="text"
+          formControlName="username"
+          class="neu-form-control-input"
+          [ngClass]="{ 'is-invalid': submitted && loginForm?.['username']?.errors }"
+          placeholder="username"
+        />
+        <span
+          *ngIf="submitted && loginForm?.['username']?.errors"
+          class="error-icon-spacing"
+        >
+          <i
+            *ngIf="loginForm?.['username']?.errors?.['required']"
+            class="fa-solid fa-circle-exclamation"
+            title="Username is required"
+          ></i>
+        </span>
+      </div>
+
+      <div class="neu-form-control hide-cursor">
+        <i class="fa-solid fa-lock icon-spacing"></i>
+        <input
+          type="password"
+          formControlName="password"
+          class="neu-form-control-input"
+          [ngClass]="{ 'is-invalid': submitted && loginForm?.['password']?.errors }"
+          placeholder="password"
+        />
+        <span
+          *ngIf="submitted && loginForm?.['password']?.errors"
+          class="error-icon-spacing"
+        >
+          <i
+            *ngIf="loginForm?.['password']?.errors?.['required']"
+            class="fa-solid fa-circle-exclamation"
+            title="Password is required"
+          ></i>
+        </span>
+      </div>
+
+      <button [disabled]="loading" class="neu-form-control-button hide-cursor">
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Login
+      </button>
+      <div
+        *ngIf="this.showErrorMessage"
+        class="neu-flex-column additional-info-message hide-cursor"
+      >
+        <small class="invalid-login-details"
+          >Invalid username or password</small
+        >
+      </div>
+
+      <div
+        *ngIf="this.showAccountCreatedMessage"
+        class="neu-flex-column additional-info-message hide-cursor"
+      >
+        <small>Account created successfully</small>
+      </div>
+    </form>
+  </div>
+
+  <button
+    type="button"
+    class="view-products-button hide-cursor"
+    [routerLink]="['/viewproducts']"
+  >
+    View products
+  </button>
+</div>

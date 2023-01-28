@@ -1,0 +1,170 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+// .neu-bg{
+//   background-color: neu-vars.$bg-color;
+// }
+
+.hide-cursor {
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+.cart-icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  border: 0px;
+}
+
+.cart-indicator-text {
+  font-size: 0.7rem;
+  background-color: rgb(218, 25, 25);
+  color: white;
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  bottom: 20%;
+  right: 16%;
+  border-radius: neu-vars.$circle-br;
+  padding-bottom: 3px;
+}
+
+.indicator-container-styling {
+  position: relative;
+}
+
+.cart-button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.nav-link {
+  width: 5rem;
+  text-align: center;
+  //align-content: center;
+  //align-items: center;
+}
+
+.increase-width {
+  width: 6.2rem;
+}
+
+// .neu-navbar-navigation-bg-color{
+//   background-color: neu-vars.$navbar-color;
+// }
+
+.neu-nav-item {
+  display: block;
+  width: 6rem;
+  text-decoration: none;
+  text-align: center;
+  border-radius: neu-vars.$navbar-navigation-br;
+  font-weight: bold;
+  position: relative;
+  color: neu-vars.$neutral-text;
+
+  &:hover {
+    color: neu-vars.$bootstrap-primary;
+    // background-image: neu-vars.$navbar-navigation-background-image;
+    //text-decoration: underline;
+  }
+}
+
+.neu-active-nav-item {
+  box-shadow: neu-vars.$navbar-navigation-bs-inset;
+
+  a {
+    color: neu-vars.$bootstrap-primary;
+  }
+
+  &:hover {
+  }
+}
+
+.neu-nav-bs {
+  // display: inline-flex;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: center;
+  flex-basis: content;
+  box-shadow: neu-vars.$navbar-navigation-bs;
+}
+
+.neu-nav-br {
+  border-radius: neu-vars.$navbar-navigation-br;
+}
+
+.firstItem {
+  border-top-left-radius: neu-vars.$navbar-navigation-br;
+  border-bottom-left-radius: neu-vars.$navbar-navigation-br;
+
+  &:hover {
+    border-top-left-radius: neu-vars.$navbar-navigation-br;
+    border-bottom-left-radius: neu-vars.$navbar-navigation-br;
+  }
+}
+
+.lastItem {
+  border-top-right-radius: neu-vars.$navbar-navigation-br;
+  border-bottom-right-radius: neu-vars.$navbar-navigation-br;
+  &:hover {
+    border-top-right-radius: neu-vars.$navbar-navigation-br;
+    border-bottom-right-radius: neu-vars.$navbar-navigation-br;
+  }
+}
+
+// .onlyItem {
+//   @extend .firstItem, .lastItem;
+// }
+
+.neu-nav-styling {
+  background-color: neu-vars.$navbar-header-color;
+  border-bottom-left-radius: neu-vars.$navbar-navigation-br;
+  border-bottom-right-radius: neu-vars.$navbar-navigation-br;
+  box-shadow: neu-vars.$navbar-bs;
+}
+
+.neu-nav-buttons-styling {
+  border: none;
+  outline: none;
+  background: none;
+  height: neu-vars.$navbar-cirle-button-size;
+  width: neu-vars.$navbar-cirle-button-size;
+  margin-left: neu-vars.$navbar-buttons-margin;
+  margin-right: neu-vars.$navbar-buttons-margin;
+  box-shadow: neu-vars.$navbar-button-bs;
+  border-radius: neu-vars.$navbar-button-br;
+  font-size: 1.1rem;
+  border: 4px solid transparent;
+  color: neu-vars.$neutral-text;
+  transition: all 0.2s;
+  
+
+  &:hover {
+    color: neu-vars.$dark-text;
+    border: 4px solid neu-vars.$white;
+  }
+}
+
+.neu-nav-buttons-active {
+  color: neu-vars.$dark-text;
+  box-shadow: neu-vars.$navbar-button-bs-inset;
+  border: 4px solid neu-vars.$white;
+  // height: 3.3rem;
+  // width: 3.3rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  #nav-buttons{
+    margin-top: 1rem;;
+    margin-bottom: 1rem;
+  }
+
+  .margin-top{
+    margin-top:1rem;
+  }
+
+  .neu-nav-item{
+    width: 5rem;
+  }
+ }

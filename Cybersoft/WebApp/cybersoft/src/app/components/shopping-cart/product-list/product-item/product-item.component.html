@@ -1,0 +1,74 @@
+<!--<a href="#" class="navbar-brand d-flex align-items-center">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /><circle cx="12" cy="13" r="4" /></svg>
+  <strong>Album</strong>
+</a>-->
+<!-- <div [@addToCart]="addingToCartAnimation ? 'adding' : 'added'" class="card neu-card-bs neu-card-br neu-card-bg"> -->
+
+<div class="card neu-card-bs neu-card-br neu-card-bg">
+  <img
+    class="bd-placeholder-img neu-card-image-br"
+    width="100%"
+    src="{{ productItem.imageUrl }}"
+  />
+  <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+  <div class="card-body">
+    <div class="group-product-details">
+      <p class="card-text product-name-text">
+        <strong>{{ productItem.name }}</strong>
+      </p>
+      <div class="description-box-size">
+        <p class="card-text description-text">{{ productItem.description }}</p>
+      </div>
+      <div class="d-flex justify-content-end">
+        <small class="text-muted price-spacing change-price-font">{{
+          productItem.price | currency: "LKR "
+        }}</small>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <div class="form-check-inline col-sm-4 show-cursor">
+          <input
+            type="text"
+            class="form-control input-quantity-format neu-card-quantity-border"
+            [(ngModel)]="this.inputQuantity"
+          />
+        </div>
+
+
+        <button
+          type="button"
+          class="product-button neu-card-button-bs"
+          [disabled]="this.inputQuantity <= 0 || this.loading"
+          (click)="handleAddToCart()"
+        >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          {{addToCartButtonText}}
+        </button>
+
+
+
+        <!--        <button type="button" class="btn btn-sm btn-outline-secondary product-buttons">View Details</button>-->
+        <!--        <div class="col-sm-4 mb-2">-->
+        <!--          <div class="form-check-inline">-->
+        <!--            <input type="text" class="form-control" [(ngModel)]="this.inputQuantity">-->
+        <!--          </div>-->
+        <!--      </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="col-lg-12 mb-3 d-flex align-items-stretch">-->
+<!--  <div class="card">-->
+<!--    <img src="https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg" class="card-img-top" alt="Card Image">-->
+<!--    <div class="card-body d-flex flex-column">-->
+<!--      <h5 class="card-title">Dōtonbori Canal</h5>-->
+<!--      <p class="card-text mb-4">Is a manmade waterway dug in the early 1600's and now displays many landmark commercial locals and vivid neon signs.</p>-->
+<!--      <a href="#" class="btn btn-primary mt-auto align-self-start">Book now</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -1,0 +1,19 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+.change-pending-status-color{
+  color: red;
+}
+
+.change-completed-status-color{
+  color:teal;
+}
+
+.order-br-bs{
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-2;
+}
+
+.order-items-bs{
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-inset-1;
+}

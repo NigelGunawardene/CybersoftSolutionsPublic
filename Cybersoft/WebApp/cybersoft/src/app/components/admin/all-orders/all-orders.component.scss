@@ -1,0 +1,15 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+.bottom-spacing {
+  margin-bottom: 8rem;
+}
+
+.order-br-bs {
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-2;
+}
+
+.order-items-bs {
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-inset-1;
+}

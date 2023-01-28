@@ -1,0 +1,32 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+.login-button-spacing{
+  margin-top: 1rem;
+}
+
+h4{
+  text-align: center;
+}
+
+
+.remove-background{
+  background-color: white;
+}
+
+.card{
+  border: none;
+}
+
+.neu-account{
+  margin-top: 2rem;
+  padding: 3rem 6rem 3rem 6rem;
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-inset-1;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-top {
+    margin-top: 12rem;
+  }
+}
+

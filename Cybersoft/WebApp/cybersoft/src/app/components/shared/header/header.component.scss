@@ -1,0 +1,23 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.cybersoft-icon{
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  // border: 2px solid gray;
+  border-radius: neu-vars.$circle-br;
+}
+
+.welcome-text{
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: neu-vars.$neutral-text;
+}
+
+
+@media screen and (max-width: 991px) {
+  .welcome-text {
+    font-size: 1.1rem;
+  }
+}
+

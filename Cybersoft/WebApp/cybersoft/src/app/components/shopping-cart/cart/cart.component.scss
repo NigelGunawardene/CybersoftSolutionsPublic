@@ -1,0 +1,73 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.checkout-button-styling{
+  border: none;
+  // background: none;
+  outline: none;
+  margin-top: 1.5rem;
+  height: 3rem;
+  width: 100%;
+  transition: all 0.3s;
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+
+  &:hover {
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+    // background-color: neu-vars.$bootstrap-primary;
+    // color: neu-vars.$main-color;
+  }
+
+  &:active {
+    background-color: neu-vars.$main-color;
+  }
+}
+
+.neu-cart-item-background{
+  background-color: neu-vars.$main-color;
+}
+
+.empty-cart-styling{
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  opacity: 0.6;
+}
+
+.total-price{
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+}
+
+.change-total-price-font{
+  font-size: 0.9rem;
+  font-family: "sora";
+}
+
+.neu-cart-bs{
+  box-shadow: neu-vars.$cart-bs;
+}
+
+.neu-cart-bs-inset{
+  box-shadow: neu-vars.$cart-bs-inset;
+}
+
+.neu-cart-br{
+  border-radius: neu-vars.$cart-br;
+}
+
+.neu-checkout-button-border{
+  box-shadow: neu-vars.$checkout-button-bs;
+}
+
+.neu-checkout-button-br{
+  border-radius: neu-vars.$checkout-button-br;
+}
+
+@media screen and (max-width: 768px) {
+
+  .checkout-button-styling{
+    margin-bottom: 7rem;
+  }
+}
+
+

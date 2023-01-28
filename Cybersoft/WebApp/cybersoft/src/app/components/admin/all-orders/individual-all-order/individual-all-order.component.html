@@ -1,0 +1,35 @@
+<div class="card order-br-bs m-4 p-4">
+  <div class="card-body">
+    <div class="top-half">
+      <p class="card-text">
+        Order reference number:
+        <strong>{{ individualAllOrder.publicOrderNumber }}</strong>
+      </p>
+      <small class="text-muted price-font"
+        >Total price:
+        {{ individualAllOrder.totalPrice | currency: "LKR " }}</small
+      >
+    </div>
+
+    <p class="card-text">Order items:</p>
+    <div class="order-items-bs p-3">
+      <div class="col" *ngFor="let allOrderDetail of allOrderDetailList">
+        <app-all-order-items
+          [orderDetail]="allOrderDetail"
+        ></app-all-order-items>
+      </div>
+    </div>
+    <div class="btn-group" *ngIf="individualAllOrder.isComplete">
+      <p class="card-text">Completed</p>
+    </div>
+    <div class="btn-group" *ngIf="!individualAllOrder.isComplete">
+      <button
+        type="button"
+        class="complete-button neu-complete-button-bs"
+        (click)="completeOrder(individualAllOrder.id)"
+      >
+        Complete Order
+      </button>
+    </div>
+  </div>
+</div>

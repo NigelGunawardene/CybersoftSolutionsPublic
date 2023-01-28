@@ -1,0 +1,91 @@
+//body {
+//  background-image: url("assets/bg.jpg");
+//  background-repeat: no-repeat;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+//}
+
+//@import 'tailwindcss/base';
+//@import 'tailwindcss/components';
+//@import 'tailwindcss/utilities';
+
+
+//$fa-font-path: "../node_modules/font-awesome/fonts";
+@use 'src/assets/scss/neu-variables' as neu-vars;
+//@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+// add bootstrap overrides here
+$primary: rgb(1,112,188); //rgb(1,112,188) tesla blue
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+@font-face {
+  font-family: "raleway";
+  src: local("raleway"), url("assets/fonts/raleway.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "sora";
+  src: local("sora"), url("assets/fonts/sora.ttf") format("truetype");
+}
+
+body{
+  font-family: "raleway";
+  background-image: neu-vars.$bg-image;
+  // background-color: neu-vars.$bg-color;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+
+.change-price-font{
+  font-size: 0.7rem;
+  font-family: "sora";
+}
+
+.hide-cursor {
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+// .active-nav-item{
+//   border-radius: 2rem;
+//   //background-color: white;
+//   border-style: solid;
+//   border-width: 1px;
+//   border-color: #0d6efd;
+// }
+
+.neu-flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.neu-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+.remove-border{
+  border: none;
+}
+
+//This was addded by ng add @angular/material
+//html, body { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

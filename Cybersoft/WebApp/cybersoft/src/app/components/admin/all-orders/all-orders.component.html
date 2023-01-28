@@ -1,0 +1,26 @@
+
+<!--<mat-progress-spinner *ngIf="allOrdersList === null"></mat-progress-spinner>-->
+<!--<div *ngIf="allOrdersList.length === 0" class="alert alert-info hide-cursor">You have no orders yet</div>-->
+
+
+
+<div class="bottom-spacing">
+<div class="hide-cursor text-center" *ngIf="ordersWrapper?.items?.length > 0">
+<h4>All Orders</h4>
+  <div class="container">
+      <div class="col" *ngFor="let order of ordersWrapper?.items">
+        <app-individual-all-order [individualAllOrder]="order"></app-individual-all-order>
+      </div>
+  </div>
+</div>
+
+<mat-paginator #paginator
+  (page)="handlePageEvent($event)"
+  [length]="length"
+  [pageSize]="pageSize"
+  [showFirstLastButtons]="showFirstLastButtons"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageIndex]="pageIndex"
+  aria-label="Select page">
+</mat-paginator>
+</div>

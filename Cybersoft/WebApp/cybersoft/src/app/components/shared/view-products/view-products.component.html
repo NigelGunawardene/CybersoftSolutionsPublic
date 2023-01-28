@@ -1,0 +1,12 @@
+<div class="spacing">
+  <app-search-bar ></app-search-bar>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 products-container-spacing">
+      <div class="col" *ngFor="let product of productsList">
+        <app-view-products-items [productItem]="product"></app-view-products-items>
+      </div>
+    </div>
+  </div>
+</div>
+

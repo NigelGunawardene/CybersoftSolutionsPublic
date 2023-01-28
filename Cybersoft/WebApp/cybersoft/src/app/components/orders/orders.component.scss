@@ -1,0 +1,18 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+h4 {
+  text-align: center;
+}
+.remove-background {
+  background-color: white;
+}
+
+.margin-bottom {
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .margin-top {
+    margin-top: 12rem;
+  }
+}

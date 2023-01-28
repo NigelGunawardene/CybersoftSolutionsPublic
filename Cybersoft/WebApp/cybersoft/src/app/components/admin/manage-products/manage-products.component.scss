@@ -1,0 +1,139 @@
+@use "src/assets/scss/neu-variables" as neu-vars;
+
+.ngx-pagination {
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-decoration: none !important;
+    font-family: sora;
+    font-size: 0.9rem;
+  }
+}
+
+.neu-border {
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-2;
+}
+
+.border-transparent {
+  border: transparent;
+}
+
+.bottom-spacing {
+  margin-bottom: 8rem;
+}
+
+.manage-products-table {
+  font-size: 0.8rem;
+}
+
+.edit-button {
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: neu-vars.$circle-br;
+  background: neu-vars.$dark-blue-bg;
+  color: neu-vars.$white;
+
+  &:hover {
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+  }
+}
+
+.delete-button{
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: neu-vars.$circle-br;
+  background: neu-vars.$red;
+  color: neu-vars.$white;
+
+  &:hover {
+    background: red;
+    color: neu-vars.$dark-text;
+  }
+}
+
+.neu-modal {
+  box-shadow: 0px 0px 20px rgba(243, 240, 240, 1);
+}
+
+.neu-form-control {
+  width: 80%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: neu-vars.$neutral-text;
+  font-size: 1.1rem;
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$login-bs-inset;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.neu-form-control-input {
+  border: none;
+  background: none;
+  outline: none;
+  caret-color: black;
+  width: 100%;
+}
+
+.neu-form-control-button {
+  border: 4px solid transparent;
+  background: none;
+  outline: none;
+  margin-top: 1rem;
+  width: 10rem;
+  height: 3rem;
+  border-radius: neu-vars.$large-br;
+  font-size: 1.1rem;
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+  box-shadow: neu-vars.$login-bs;
+  transition: all 0.3s;
+
+  &:hover {
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+  }
+
+  &:active {
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+  }
+}
+
+.modal-labels {
+  color: neu-vars.$neutral-text;
+}
+
+.modal-form-field {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.neu-container-bg {
+  background: neu-vars.$secondary-color;
+}
+
+.neu-footer{
+  border: none;
+  outline: none;
+  width: 95%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.arrange-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

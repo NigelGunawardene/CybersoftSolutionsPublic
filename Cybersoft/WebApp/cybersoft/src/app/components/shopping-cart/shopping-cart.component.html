@@ -1,0 +1,26 @@
+<div class="row hide-cursor">
+
+<!--  <div class="col">-->
+<!--  <app-filters></app-filters>-->
+<!--  </div>-->
+
+  <div class="col-md-9">
+
+  <div *ngIf="isMobileDevice" class="mobile-search-bar-formatting">
+    <app-search-bar ></app-search-bar>
+  </div>
+
+  <app-product-list></app-product-list>
+  </div>
+
+  <div class="col-md-3">
+    <div *ngIf="!isMobileDevice" class="col search-bar-padding format-this">
+      <app-search-bar ></app-search-bar>
+    </div>
+
+    <div class="col">
+    <app-cart></app-cart>
+    </div>
+  </div>
+
+</div>

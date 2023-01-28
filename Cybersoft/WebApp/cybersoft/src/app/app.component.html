@@ -1,0 +1,19 @@
+<app-toaster></app-toaster>
+<div class="container margin-bottom">
+  <app-nav></app-nav>
+</div>
+<div class="container">
+  <div class="row component-min-height">
+    <div class="col">
+      <div [@slideAnimation]="prepareRoute(outlet)" class="prepare-animations">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

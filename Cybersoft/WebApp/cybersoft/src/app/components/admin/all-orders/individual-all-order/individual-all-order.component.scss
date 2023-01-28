@@ -1,0 +1,55 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.top-half{
+  text-align: left;
+}
+
+.price-font{
+  font-family: "Sora";
+}
+
+.spacing-top{
+  margin-top: 1rem;
+}
+
+
+.order-br-bs{
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-2;
+}
+
+.order-items-bs{
+  border-radius: neu-vars.$medium-br;
+  box-shadow: neu-vars.$standard-bs-inset-1;
+}
+
+.complete-button{
+  margin-top: 2rem;
+  height: 2.5rem;
+  width: 16em;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  border-radius: neu-vars.$card-button-br;
+  margin-left: 1rem;
+  transition: all 0.3s ease 0s;
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+
+  &:hover{
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+    box-shadow: neu-vars.$card-button-active-bs;
+  }
+
+  &:active{
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+  }
+}
+
+.neu-complete-button-bs{
+  box-shadow: neu-vars.$card-button-bs;
+}
+
+

@@ -1,0 +1,245 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.cart-item{
+    font-size: small;
+}
+
+.neu-cart-item-background{
+  background-color: neu-vars.$main-color;
+}
+
+.cart-remove-button{
+  border: none;
+  outline: none;
+  height: 2.3rem;
+  width: 2.3rem;
+  border-radius: neu-vars.$circle-br;
+  box-shadow: neu-vars.$standard-bs-2;
+
+  &:hover{
+    color: neu-vars.$red;
+    background: neu-vars.$dark-blue-bg;
+  }
+}
+
+.spinner-styling{
+  color: neu-vars.$red;
+}
+
+
+
+
+
+
+//#app-cover {
+//  position: absolute;
+//  top: 50%;
+//  right: 0;
+//  left: 0;
+//  width: 40px;
+//  height: 40px;
+//  margin: -40px auto 0 auto;
+//  background-color: white;
+//  border-radius: 50%;
+//  //box-shadow: 0 0 0 8px #feeeed;
+//  overflow: hidden;
+//}
+//
+//#checkbox {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+//  margin: 0;
+//  opacity: 0;
+//  z-index: 3;
+//}
+//
+//#bin-icon {
+//  position: absolute;
+//  top: 50%;
+//  right: 0;
+//  left: 0;
+//  width: 14px;
+//  height: 18px;
+//  margin: -5px auto 0 auto;
+//  border-radius: 50%;
+//  z-index: 2;
+//}
+//
+//#lid {
+//  position: relative;
+//  width: 16px;
+//  height: 2px;
+//  left: -1px;
+//  border-radius: 1px;
+//}
+//
+//#lid:before {
+//  content: "";
+//  position: absolute;
+//  top: -1px;
+//  right: 0;
+//  left: 0;
+//  width: 3px;
+//  height: 2px;
+//  margin: 0 auto;
+//  border-radius: 10px 10px 0 0;
+//}
+//
+//#box {
+//  position: relative;
+//  height: 17px;
+//  margin-top: 2px;
+//  border-radius: 0 0 0 0;
+//}
+//
+//#box-inner {
+//  position: relative;
+//  top: 1px;
+//  width: 10px;
+//  height: 14px;
+//  margin: 0 auto;
+//  background-color: white;
+//  border-radius: 0 0 0px 0px;
+//}
+//
+//#bin-lines {
+//  position: relative;
+//  top: 2px;
+//  margin: 0 auto;
+//}
+//
+//#bin-lines,
+//#bin-lines:before,
+//#bin-lines:after {
+//  width: 1px;
+//  height: 10px;
+//  border-radius: 1px;
+//}
+//
+//#bin-lines:before,
+//#bin-lines:after {
+//  content: "";
+//  position: absolute;
+//}
+//
+//#bin-lines:before {
+//  left: -3px;
+//}
+//
+//#bin-lines:after {
+//  left: 3px;
+//}
+//
+//#layer {
+//  position: absolute;
+//  right: -5px;
+//  bottom: -5px;
+//  width: 0;
+//  height: 0;
+//  background-color: white;
+//  border-radius: 50%;
+//  transition: 0.25s ease all;
+//  z-index: 1;
+//}
+//
+//#lid,
+//#lid:before,
+//#box,
+//#bin-lines,
+//#bin-lines:before,
+//#bin-lines:after {
+//  background-color: red;
+//  transition: 0.2s ease background-color;
+//}
+//
+//#checkbox:checked ~ #bin-icon #lid,
+//#checkbox:checked ~ #bin-icon #lid:before,
+//#checkbox:checked ~ #bin-icon #box,
+//#checkbox:checked ~ #bin-icon #box-inner {
+//  background-color: red;
+//}
+//
+//#bin-icon #bin-lines,
+//#bin-icon #bin-lines:before,
+//#bin-icon #bin-lines:after {
+//  background-color: red;
+//}
+//
+//#checkbox:checked + #bin-icon #box {
+//  animation: shake 0.2s ease 0.1s;
+//}
+//
+//#checkbox:checked + #bin-icon #lid {
+//  animation: lift-up 0.8s ease 0.1s, shake_u 0.8s ease 0.1s,
+//  shake_l 0.2s ease 0.8s;
+//}
+//
+//#checkbox:checked ~ #layer {
+//  width: 40px;
+//  height: 40px;
+//}
+//
+//@keyframes shake {
+//  0% {
+//    transform: rotateZ(3deg);
+//  }
+//  25% {
+//    transform: rotateZ(0);
+//  }
+//  75% {
+//    transform: rotateZ(-3deg);
+//  }
+//  100% {
+//    transform: rotateZ(0);
+//  }
+//}
+//
+//@keyframes lift-up {
+//  0% {
+//    top: 0;
+//  }
+//  50% {
+//    top: -35px;
+//  }
+//  100% {
+//    top: 0;
+//  }
+//}
+//
+//@keyframes shake_u {
+//  0% {
+//    transform: rotateZ(0);
+//  }
+//  25% {
+//    transform: rotateZ(-15deg);
+//  }
+//  50% {
+//    transform: rotateZ(0deg);
+//  }
+//  75% {
+//    transform: rotateZ(15deg);
+//  }
+//  100% {
+//    transform: rotateZ(0);
+//  }
+//}
+//
+//@keyframes shake_l {
+//  0% {
+//    transform: rotateZ(0);
+//  }
+//  80% {
+//    transform: rotateZ(3deg);
+//  }
+//  90% {
+//    transform: rotateZ(-3deg);
+//  }
+//  100% {
+//    transform: rotateZ(0);
+//  }
+//}

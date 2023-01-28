@@ -1,0 +1,53 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.left-spacing{
+  margin-left: 1rem;
+}
+
+.price-spacing{
+  padding-bottom: 1rem;
+}
+
+.card{
+  height: 22rem;
+}
+
+.group-product-details{
+  height: 9rem;
+}
+
+.description-box-size{
+  height: 4rem;
+}
+
+.product-name-text{
+  font-size: 1rem;
+}
+
+.description-text{
+  font-size: 0.8rem;
+}
+
+.neu-card-bs{
+  box-shadow: neu-vars.$standard-bs-1;
+}
+
+.neu-card-br{
+  border-radius: neu-vars.$card-br;
+}
+
+.neu-card-bg{
+  background-color: neu-vars.$main-color;
+}
+
+.neu-card-image-br{
+  border-top-left-radius: neu-vars.$card-br;
+  border-top-right-radius: neu-vars.$card-br;
+}
+
+@media screen and (max-width: 768px) {
+  .card{
+    height: 22rem;
+  }
+}
+

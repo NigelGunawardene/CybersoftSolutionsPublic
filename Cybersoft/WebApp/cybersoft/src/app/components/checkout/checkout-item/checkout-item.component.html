@@ -1,0 +1,11 @@
+<div class="cart-item">
+  <span>{{ cartItem.productName }}</span> :
+  <span>{{ cartItem.price }}</span> x
+  <span>{{ cartItem.quantity }}</span>:
+  <strong class="change-price-font">{{ (cartItem.quantity * cartItem.price) | currency:'LKR ' }}</strong>
+  <div class="btn-group">
+    <button type="button" class="btn btn-sm btn-primary me-2" [disabled]="this.loading" (click)="removeCartItem(cartItem.id)">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Remove</button>
+  </div>
+</div>

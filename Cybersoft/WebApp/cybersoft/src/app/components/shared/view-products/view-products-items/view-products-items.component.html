@@ -1,0 +1,14 @@
+<div class="card hide-cursor neu-card-bs neu-card-br neu-card-bg">
+  <img class="bd-placeholder-img card-img-top neu-card-image-br" width="100%" src="{{ productItem.imageUrl }}"/>
+  <div class="card-body">
+    <div class="group-product-details">
+      <p class="card-text product-name-text"><strong>{{ productItem.name }}</strong></p>
+      <div class="description-box-size">
+        <p class="card-text description-text">{{ productItem.description }}</p>
+      </div>
+      <div class="d-flex justify-content-end">
+        <small class="text-muted price-spacing change-price-font">{{ productItem.price | currency:'LKR ' }}</small>
+      </div>
+    </div>
+  </div>
+</div>

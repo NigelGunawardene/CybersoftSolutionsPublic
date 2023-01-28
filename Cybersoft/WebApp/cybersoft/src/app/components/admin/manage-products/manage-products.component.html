@@ -1,0 +1,296 @@
+<div class="bottom-spacing">
+  <div class="container hide-cursor">
+    <h2 class="text-secondary text-center">Manage Products</h2>
+
+    <div
+      *ngIf="allProductsList.length > 0"
+      class="neu-border manage-products-table"
+    >
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th style="width: 5%;">ID</th>
+            <th style="width: 20%;">Name</th>
+            <th style="width: 40%;">Description</th>
+            <th style="width: 10%;">Price</th>
+            <th style="width: 10%;">ImageUrl</th>
+            <th style="width: 5%;">IsDeleted</th>
+            <th style="width: 10%;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let product of allProductsList
+                | paginate
+                  : {
+                      itemsPerPage: this.pageSize,
+                      currentPage: this.currentPage,
+                      totalItems: totalItems
+                    }
+            "
+          >
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.imageUrl }}</td>
+            <td>{{ product.isDeleted }}</td>
+            <td>
+              <div class="arrange-icons">
+                <button
+                  type="button"
+                  class="edit-button"
+                  title="Edit product"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editProductModal"
+                  (click)="assignCurrentProduct(product)"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="delete-button"
+                  title="Delete product"
+                  (click)="deleteProduct(product.id)"
+                >
+                <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pagination-button-atting neu-flex-column">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="handlePageChange($event)"
+    ></pagination-controls>
+  </div>
+
+  <div class="neu-flex-column mt-3">
+    <button
+      class="neu-form-control-button"
+      title="Add product"
+      data-bs-toggle="modal"
+      data-bs-target="#addProductModal"
+    >
+      Add product
+    </button>
+  </div>
+</div>
+
+<!-- ADD PRODUCT MODAL -->
+<div
+  class="modal fade modal-xl"
+  id="addProductModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="addProductLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+  >
+    <div class="modal-content neu-modal neu-container-bg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addProductLabel">Add Product</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          [formGroup]="addProductForm"
+          (ngSubmit)="onAddSubmit()"
+          autocomplete="off"
+          class="neu-flex-column"
+        >
+          <div class="modal-form-field">
+            <label for="productName" class="modal-labels">Name</label>
+            <div class="neu-form-control hide-cursor">
+              <input
+                type="text"
+                formControlName="productName"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && addProductFormProperties?.['productName']?.errors }"
+              />
+            </div>
+          </div>
+
+          <div class="modal-form-field">
+            <label for="productDescription" class="modal-labels"
+              >Description</label
+            >
+            <div class="neu-form-control hide-cursor">
+              <textarea
+                type="text"
+                formControlName="productDescription"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && addProductFormProperties?.['productDescription']?.errors }"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="modal-form-field">
+            <label for="productPrice" class="modal-labels">Price</label>
+            <div class="neu-form-control hide-cursor">
+              <input
+                type="text"
+                formControlName="productPrice"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && addProductFormProperties?.['productPrice']?.errors }"
+              />
+            </div>
+          </div>
+
+          <div class="modal-footer neu-footer">
+            <button
+              type="submit"
+              class="neu-form-control-button"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              class="neu-form-control-button"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT PRODUCT MODAL  -->
+<div
+  class="modal fade modal-xl"
+  id="editProductModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="editProductLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+  >
+    <div class="modal-content neu-modal neu-container-bg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProductLabel">
+          Edit Product - {{ selectedProduct?.name }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          [formGroup]="editProductForm"
+          (ngSubmit)="onEditSubmit()"
+          autocomplete="off"
+          class="neu-flex-column"
+        >
+          <div class="modal-form-field">
+            <label for="productName" class="modal-labels">Name</label>
+            <div class="neu-form-control hide-cursor">
+              <input
+                type="text"
+                formControlName="productName"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && editProductFormProperties?.['productName']?.errors }"
+              />
+              <!-- <span
+              *ngIf="submitted && editProductFormProperties?.['productName']?.errors"
+              class="error-icon-spacing"
+            >
+              <i
+                *ngIf="editProductFormProperties?.['productName']?.errors?.['required']"
+                class="fa-solid fa-circle-exclamation"
+                title="Username is required"
+              ></i>
+            </span> -->
+            </div>
+          </div>
+
+          <div class="modal-form-field">
+            <label for="productDescription" class="modal-labels"
+              >Description</label
+            >
+            <div class="neu-form-control hide-cursor">
+              <textarea
+                type="text"
+                formControlName="productDescription"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && editProductFormProperties?.['productDescription']?.errors }"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="modal-form-field">
+            <label for="productPrice" class="modal-labels">Price</label>
+            <div class="neu-form-control hide-cursor">
+              <input
+                type="text"
+                formControlName="productPrice"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && editProductFormProperties?.['productPrice']?.errors }"
+              />
+            </div>
+          </div>
+
+          <div class="modal-form-field">
+            <label for="productImageUrl" class="modal-labels">Image URL</label>
+            <div class="neu-form-control hide-cursor">
+              <input
+                type="text"
+                formControlName="productImageUrl"
+                class="neu-form-control-input"
+                [ngClass]="{ 'is-invalid': submitted && editProductFormProperties?.['productImageUrl']?.errors }"
+              />
+            </div>
+          </div>
+
+          <!-- <button [disabled]="loading" class="neu-form-control-button">
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Login
+          </button> -->
+          <div class="modal-footer neu-footer">
+            <button
+              type="submit"
+              class="neu-form-control-button"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              class="neu-form-control-button"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

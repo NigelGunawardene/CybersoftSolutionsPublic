@@ -1,0 +1,128 @@
+<div class="neu-flex-column hide-cursor">
+<div [@logInFadeIn] class="row">
+  <div class="col-md-12 neu-register-container neu-flex-column">
+
+        <h2>Sign up</h2>
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="neu-flex-column">
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="username" class="register-form-labels">Username</label> -->
+            <i class="fa-solid fa-user icon-spacing"></i>
+            <input id="username"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('username')?.touched && registerForm.get('username')?.invalid }"
+                   formControlName="username"
+                   placeholder="username" />
+            <span class="invalid-feedback padding-left">
+              <span *ngIf="registerForm.get('username')?.hasError('required')">Username can't be blank</span>
+              <span *ngIf="registerForm.get('username')?.hasError('minlength')">Username must contain minimum 4 characters</span>
+              <span *ngIf="registerForm.get('username')?.hasError('usernameInUse')">Username is already in use</span>
+              <span *ngIf="registerForm.get('username')?.hasError('cannotContainSpace')">Username can not contain spaces</span>
+              <span *ngIf="registerForm.get('username')?.hasError('cannotContainPlus')">Please enter Username without +</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="firstname" class="register-form-labels">First Name</label> -->
+            <i class="fa-solid fa-address-book icon-spacing"></i>
+            <input id="firstname"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('firstname')?.touched && registerForm.get('firstname')?.invalid }"
+                   formControlName="firstname"
+                   placeholder="firstname" />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('firstname')?.hasError('required')">First name can't be blank</span>
+              <span *ngIf="registerForm.get('firstname')?.hasError('minlength')">First name must contain minimum 3 characters</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="lastname" class="register-form-labels">Last Name</label> -->
+            <i class="fa-solid fa-signature icon-spacing"></i>
+            <input id="lastname"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('lastname')?.touched && registerForm.get('lastname')?.invalid }"
+                   formControlName="lastname"
+                   placeholder="lastname" />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('lastname')?.hasError('required')">Last name can't be blank</span>
+              <span *ngIf="registerForm.get('lastname')?.hasError('minlength')">Last name must contain minimum 3 characters</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="email" class="register-form-labels">Email</label> -->
+            <i class="fa-solid fa-envelope icon-spacing"></i>
+            <input type="email"
+                   id="email"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('email')?.touched && registerForm.get('email')?.invalid }"
+                   formControlName="email"
+                   placeholder="email" />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('email')?.hasError('required')">Email can't be blank</span>
+              <span *ngIf="registerForm.get('email')?.hasError('email')">Email must be valid</span>
+              <span *ngIf="registerForm.get('email')?.hasError('emailInUse')">Email is already in use</span>
+              <span *ngIf="registerForm.get('email')?.hasError('cannotContainSpace')">Email can not contain spaces</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="phonenumber" class="register-form-labels">Phone Number</label> -->
+            <i class="fa-solid fa-phone icon-spacing"></i>
+            <input id="phonenumber"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('phonenumber')?.touched && registerForm.get('phonenumber')?.invalid }"
+                   formControlName="phonenumber"
+                   placeholder="phone number" />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('phonenumber')?.hasError('required')">Phone number can't be blank</span>
+              <span *ngIf="registerForm.get('phonenumber')?.hasError('phonenumberInUse')">Phone number is already in use</span>
+              <span *ngIf="registerForm.get('phonenumber')?.hasError('cannotContainSpace')">Phone number can not contain spaces</span>
+              <span *ngIf="registerForm.get('phonenumber')?.hasError('cannotContainSymbols')">Please enter phone number without symbols(+, -, etc)</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="password" class="register-form-labels">Password</label> -->
+            <i class="fa-solid fa-lock icon-spacing"></i>
+            <input type="password"
+                   id="password"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('password')?.touched && registerForm.get('password')?.invalid }"
+                   formControlName="password"
+                   placeholder="password" />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('password')?.hasError('required')">Password can't be blank</span>
+              <!--<span *ngIf="registerForm.get('password').hasError('symbol')">Password must contain @</span>-->
+              <span *ngIf="registerForm.get('password')?.hasError('minlength')">Password must contain minimum 6 characters</span>
+              <span *ngIf="registerForm.get('password')?.hasError('cannotContainSpace')">Password can not contain spaces</span>
+            </span>
+          </div>
+
+          <div class="neu-form-control hide-cursor">
+            <!-- <label for="confirmPassword" class="register-form-labels">Confirm Password</label> -->
+            <i class="fa-solid fa-lock icon-spacing"></i>
+            <input type="password"
+                   id="confirmPassword"
+                   class="neu-form-control-input"
+                   [ngClass]="{ 'is-invalid': registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid }"
+                   formControlName="confirmPassword"
+                   placeholder="confirm password" />
+            <span class="invalid-feedback">Passwords must match</span>
+          </div>
+
+          <button class="neu-form-control-button" [disabled]="registerForm.invalid || this.loading">Register</button>
+        </form>
+        <p class="register-text-spacing hide-cursor">
+          Already have an account? <a routerLink="/account/login">Login</a>
+        </p>
+
+
+  </div>
+
+</div>
+
+
+</div>

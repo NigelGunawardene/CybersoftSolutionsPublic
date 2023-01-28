@@ -1,0 +1,56 @@
+@use 'src/assets/scss/neu-variables' as neu-vars;
+
+.empty-cart-styling{
+  height: 5rem;
+  opacity: 0.6;
+}
+
+.place-order-button{
+  border: none;
+  outline: none;
+  margin-top: 1.5rem;
+  height: 3rem;
+  width: 15rem;
+  transition: all 0.3s;
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+  box-shadow: neu-vars.$checkout-button-bs;
+  border-radius: neu-vars.$checkout-button-br;
+
+  &:hover {
+    background: neu-vars.$dark-blue-bg-hover;
+    color: neu-vars.$dark-text;
+  }
+
+  &:active {
+    background-color: neu-vars.$main-color;
+  }
+}
+
+.total-price{
+  color: neu-vars.$white;
+  background: neu-vars.$dark-blue-bg;
+}
+
+.neu-checkout-bs{
+  box-shadow: neu-vars.$cart-bs;
+}
+
+.neu-checkout-bs-inset{
+  box-shadow: neu-vars.$cart-bs-inset;
+}
+
+.neu-checkout-br{
+  border-radius: neu-vars.$cart-br;
+}
+
+.set-width{
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .margin-top {
+    margin-top: 12rem;
+  }
+}

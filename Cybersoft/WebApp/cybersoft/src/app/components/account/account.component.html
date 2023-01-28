@@ -1,0 +1,19 @@
+<div [@fadeInAnimation] class="hide-cursor margin-top neu-flex-column">
+  <h4>Profile</h4>
+
+  <div class="card-body neu-account">
+    <p class="card-text">Username: {{ (this.loggedInUserModel | async)?.userName }}</p>
+    <p class="card-text">First name: {{ (this.loggedInUserModel | async)?.firstName }}</p>
+    <p class="card-text">Last name: {{ (this.loggedInUserModel | async)?.lastName }}</p>
+<!--    <p class="card-text">Full name: {{ this.loggedInUserModel.fullName }}</p>-->
+    <p class="card-text">Email: {{ (this.loggedInUserModel | async)?.email }}</p>
+    <p class="card-text">Phone number: {{ (this.loggedInUserModel | async)?.phoneNumber }}</p>
+
+<!--    <div class="d-flex justify-content-between align-items-center">-->
+<!--      <div class="btn-group">-->
+<!--        <button type="button" class="btn btn-sm btn-primary me-3 product-buttons left-spacing"(click)="handleAddToCart()">Add To Cart</button>-->
+<!--        <button type="button" class="btn btn-sm btn-outline-secondary product-buttons">View Details</button>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>
